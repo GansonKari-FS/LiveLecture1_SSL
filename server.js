@@ -1,5 +1,6 @@
 const http = require("http");
 
-http.createServer().listen(3000, () => {
-  console.log("Server is running on port 3000");
+http.createServer().listen(process.env.PORT, () => {
+  console.log("Server is running on port ", process.env.PORT);
 });
+
