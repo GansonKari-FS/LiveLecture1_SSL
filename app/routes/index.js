@@ -12,10 +12,18 @@ router.get("/", (req, res) => {
   });
 });
 
+//localhost: 3000/api/anything that follows it
 // where we define our route parmaters
-router.get("/:bob", (req, res) => {
-  const { bob } = req.params;
-
+// get , put , delete
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  res.status(200).json({
+    message: `GET by id for /api`,
+    metadata: {
+      hostname: req.hostname,
+      method: req.method,
+    },
+  });
 });
 
 router.post("/", (req, res) => {
