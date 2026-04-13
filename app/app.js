@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const router = require("./routes/index.js");
 
 // attach a way to request boody data in json format
 app.use(express.json());
