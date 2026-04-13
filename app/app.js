@@ -2,18 +2,21 @@ const express = require("express");
 const app = express();
 const router = require("./routes/index.js");
 
-// attach a way to request boody data in json format
+// this lets Express read JSON from Postman
 app.use(express.json());
 
-// from local hot 3000
+// root route
 app.get("/", (req, res) => {
   res.status(200).json({
-    message: "GET - root",
+    message: "Service is up",
     metadata: {
       hostname: req.hostname,
       method: req.method,
     },
   });
 });
+
+// this connects all routes from index.js to /api
+app.use("/api", router);
 
 module.exports = app;
