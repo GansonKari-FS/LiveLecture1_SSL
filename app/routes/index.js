@@ -1,10 +1,10 @@
 const express = require("express");
-const app = express();
+const router = express.Router();
 
-// from local hot 3000
-app.get("/", (req, res) => {
+//local host
+router.get("/", (req, res) => {
   res.status(200).json({
-    message: "GET - root",
+    message: "GET to API",
     metadata: {
       hostname: req.hostname,
       method: req.method,
@@ -12,5 +12,4 @@ app.get("/", (req, res) => {
   });
 });
 
-module.exports = app;
-
+module.exports = router;
