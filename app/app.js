@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+// attach a way to request boody data in json format
+app.use(express.json());
+
 // from local hot 3000
 app.get("/", (req, res) => {
   res.status(200).json({
@@ -13,4 +16,3 @@ app.get("/", (req, res) => {
 });
 
 module.exports = app;
-
